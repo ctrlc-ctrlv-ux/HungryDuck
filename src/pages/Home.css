@@ -1,0 +1,248 @@
+/* Hero - Planet Earth Style */
+.hero {
+    position: relative;
+    height: 90vh;
+    /* Taller hero */
+    min-height: 700px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding-top: 0;
+    /* Nav is transparent */
+    padding-bottom: 50px;
+    background-color: var(--secondary);
+}
+
+.hero-background {
+    /* Nature Background Image */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    background-image: url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+    /* Lush Hotel/Nature */
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-background::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(26, 60, 40, 0.4);
+    /* Dark Green Overlay */
+    z-index: 1;
+}
+
+.hero-content {
+    text-align: center;
+    max-width: 900px;
+    z-index: 2;
+    position: relative;
+    color: #FFFFFF;
+}
+
+.hero-title {
+    font-family: var(--font-heading);
+    font-size: 5rem;
+    line-height: 1.1;
+    font-weight: 400;
+    /* Serif doesn't need huge weight */
+    margin-bottom: 30px;
+    color: #FFFFFF;
+    letter-spacing: -1px;
+}
+
+.text-gradient {
+    /* No gradient in this theme */
+    background: none;
+    -webkit-text-fill-color: initial;
+    animation: none;
+    color: #FFFFFF;
+    font-style: italic;
+}
+
+@keyframes colorCycle {
+
+    0%,
+    100% {
+        color: #0066FF;
+    }
+
+    /* Blue */
+    25% {
+        color: #8e44ad;
+    }
+
+    /* Purple */
+    50% {
+        color: #ff0066;
+    }
+
+    /* Pink */
+    75% {
+        color: #f39c12;
+    }
+
+    /* Orange */
+}
+
+.hero-subtitle {
+    font-size: 1.3rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 50px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: 400;
+    line-height: 1.8;
+}
+
+.mb-50 {
+    margin-bottom: 50px;
+}
+
+.section-subtitle {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    margin-top: 10px;
+    margin-bottom: 50px;
+}
+
+/* Services Grid - Planet Earth Clean Style */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    padding: 40px 0;
+}
+
+.service-card {
+    padding: 40px;
+    background-color: #FFFFFF;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    text-align: center;
+    /* Centered layout */
+    border: none;
+    box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.08);
+    /* Soft shadow */
+    align-items: center;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.12);
+}
+
+/* Typography & Layout */
+.service-icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--primary);
+    /* Green Icon */
+    background: transparent;
+}
+
+.service-card h3 {
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    line-height: 1.3;
+    margin-bottom: 15px;
+    font-weight: 500;
+    color: var(--secondary);
+}
+
+.service-card p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--text-muted);
+    margin-bottom: 25px;
+}
+
+.service-link {
+    margin-top: auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.8rem;
+}
+
+/* Clear pastel colors */
+.service-card.cyan,
+.service-card.blue,
+.service-card.purple,
+.service-card.pink,
+.service-card.orange,
+.service-card.yellow {
+    background-color: #FFFFFF;
+    color: inherit;
+}
+
+.service-card.cyan .service-icon,
+.service-card.blue .service-icon,
+.service-card.purple .service-icon,
+.service-card.pink .service-icon,
+.service-card.orange .service-icon,
+.service-card.yellow .service-icon {
+    color: var(--primary);
+}
+
+
+/* Feature Grid - Replaces Why Choose Us */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 40px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.feature-item {
+    padding: 20px;
+}
+
+.feature-icon {
+    margin-bottom: 20px;
+    color: var(--primary);
+    display: flex;
+    justify-content: center;
+}
+
+.feature-item h4 {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin-bottom: 15px;
+    color: var(--secondary);
+}
+
+.feature-item p {
+    color: var(--text-muted);
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+@media (max-width: 992px) {
+    .hero-title {
+        font-size: 3.5rem;
+    }
+}
